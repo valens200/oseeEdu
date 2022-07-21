@@ -1,0 +1,50 @@
+.main{
+    background-image: url('./assets/images/meeting.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main2{
+    background-image: url('./assets/images/back2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+*{
+    box-sizing: border-box;
+}
+.mine{
+    background-color: rgba(31, 39, 43, 0.75);
+}
+.myone{
+    background-image: url('./assets/images/t2.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.educate{
+    background: url('./assets/images/b2.jpg');
+    background-position: fixed;
+    background-blend-mode: color-dodge;
+    /* overflow:scroll; */
+
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.myBody{
+    background-image:url('./assets/images/facts.jpg');
+    background-repeat:no-repeat;
+    background-position: fixed;
+    background-size: cover;
+
+}
+.myBody2{
+    background-image: url('./assets/images/k5.jpg');
+    background-repeat:no-repeat;
+    background-position: fixed;
+    background-size: cover;
+}
+.mainn{
+    background-image:url('./assets/images/Photo.jpeg');
+    background-repeat:no-repeat;
+    background-position: fixed;
+    background-size: cover;
+}
