@@ -8,6 +8,7 @@ import first1 from '../assets/images/first1.jpg'
 import second from '../assets/images/second.jpg'
 import third from '../assets/images/third.jpg'
 import SubFooter from './subFooter'
+import {Link } from 'react-router-dom'
 const numbers = [1,2,3,'>']
 const cardsInfo = [
     { 
@@ -76,7 +77,8 @@ function Cards() {
     }
     
   return (
-   <div>
+<Link  to="/courses">
+<div>
      <div className=" container mx-auto grid grid-cols-1  md:grid-cols-3 space-y-0 gap-1 grid-rows-6 md:grid-rows-3">
       {cardsInfo.map((number, index) =>(
        <div key={index} className="text-black md:h-[60%] h-[70%]  mt-2 md:mt-0 rounded-full text-[0.60rem]">
@@ -102,6 +104,7 @@ function Cards() {
     </div>
     <SubFooter />
    </div>
+   </Link>
   )
 }
 

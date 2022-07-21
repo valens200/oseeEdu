@@ -2,6 +2,7 @@ import React from 'react'
 import '.././index.css'
 import '.././App.css'
 import Main from './main';
+import {Link } from 'react-router-dom';
 import { useState } from 'react'
 
 const links =  [
@@ -91,7 +92,7 @@ const hoveredd = (e, name) => {
          <div className="flex  invisible md:visible text-bold  float-left  space-x-5  flex-row ">
             {links.map((link, index) => (
              <div className="">
-               <p className="translate-y-[30%] hover:text-[#0dc434]" onClick={(e) => hoveredd(e, link)} key={index}>{link}</p>
+               <Link to={`/${link}`} ><p className="translate-y-[30%] hover:text-[#0dc434]" onClick={(e) => hoveredd(e, link)} key={index}>{link}</p></Link>
              </div>
             ))}
          </div>

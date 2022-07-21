@@ -19,6 +19,7 @@ import SubFooter from '../components/subFooter'
 import Main from '../components/main'
 import Header from '../components/Header'
 import NavBar from '../components/NavBar'
+import {Link } from 'react-router-dom'
 
 const cards = [[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javascript', '$600'] ,[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javascript', '$600']]
 const Home = () => {
@@ -56,12 +57,13 @@ return (
                 <p>you can get our courses, Here we go!!!!.</p>
              </div>
             <div>
-                <button className="bg-[#0dc434] w-[50%]  md:w-[20%]  text-[0.50rem] text-sans font-sans  px-3 py-2 mt-5 rounded-full">LET US KNOW!</button>
-            </div>
+               <Link to="/courses" ><button className="bg-[#0dc434] w-[50%]  md:w-[20%]  text-[0.50rem] text-sans font-sans  px-3 py-2 mt-5 rounded-full">LET US KNOW!</button></Link>
+            </div> 
         </div>
         <div className="container space-x-3 -translate-y-[37%] text-[0.60rem] flex flex-col md:flex-row md:space-x-8 mx-auto">
             {cards.map((card, index) => (
-                <div className="myone px-5 py-7 rounded-lg">
+                <Link to="/courses" >
+                 <div className="myone px-5 py-7 rounded-lg">
                     <h2 className="font-bold text-center">{card[0]}</h2>
                     <div className="text-[0.50rem] ">
                         <p  >{card[1]}</p>
@@ -69,6 +71,7 @@ return (
                         <p>{card[1]}</p>
                     </div>  
                 </div>
+                </Link>
             ))}
         </div>
         <div className="text-white text-center text-[0.60rem] border-[white]  pb-5 border-b-[1px]">

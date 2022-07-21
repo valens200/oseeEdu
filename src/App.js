@@ -4,6 +4,7 @@ import Meeting from './pages/Meeting'
 import Home from './pages/Home'
 import Header from './components/Header'
 import Main from './components/main'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Courses from './pages/courses'
 const appAssets = [
@@ -29,11 +30,13 @@ const appAssets = [
 ]
 function App() {
   return (
-    <div className="App h-screen">
-      {/* <Meeting /> */}
-      {/* <Courses /> */}
-      <Home />
-    </div>
+    <BrowserRouter className="App h-screen">
+      <Routes>
+        <Route path="/meetings" element={<Meeting />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
