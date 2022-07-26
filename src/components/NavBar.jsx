@@ -15,6 +15,7 @@ const links =  [
   'MATHS',
   'CONTACT US',
 ];
+const text = ['O', 'S', 'E','E','E','D','U']
 
 const NavBar = (props) => {
   
@@ -81,22 +82,53 @@ const hoveredd = (e, name) => {
     }
    
   }
+  const getText = (text, index) => {
+    switch (index) {
+      case 0:
+        return 'font-bold text-[1.6rem]'
+        break;
+      case 1:
+        return 'font-bold -translate-y-[2%] text-[1.7rem]'
+        break;
+      case 2:
+          return 'font-bold -translate-y-[4%] text-[1.7rem] '
+          break;
+      case 3:
+          return 'font-bold -translate-y-[4%] text-[1.7rem] '
+          break;
+      case 4:
+          return 'font-bold -translate-y-[10%] text-[2rem]'
+          break;
+      case 5:
+          return 'font-bold -translate-y-[16%] text-[2.2rem]'
+          break
+      case 6:
+          return 'font-bold -translate-y-[26%]  text-[2.8rem]'
+          break;
+      case 7:
+          return 'font-bold text-[3rem]'
+          break;
+        
+    }
+
+  }
 
 
   return (
     <div>
-      <div className = "w-[100%] hello  container py-2   mx-auto  flex flex-row justify-between text-[0.55rem]">
-         <div className="">
-          <h1 className="font-bold text-xl">NATEEDU</h1>
+      <div className = "w-[87%] hello  z-100   text-white pt-6  mx-auto  flex flex-row justify-between text-[0.90rem]">
+         <div className="flex">
+          {text.map((text, index) => (
+            <h1 className={getText(text, index)}>{text}</h1>
+          ))}
          </div>
-         <div className="flex  invisible md:visible text-bold  float-left  space-x-5  flex-row ">
-            {links.map((link, index) => (
+         <div className="flex   text-bold  float-left  space-x-5  flex-row ">
+            {props.links.map((link, index) => (
              <div className="">
                <Link to={`/${link}`} ><p className="translate-y-[30%] hover:text-[#0dc434]" onClick={(e) => hoveredd(e, link)} key={index}>{link}</p></Link>
              </div>
             ))}
          </div>
-         
     </div>
          {/* <Main getClass={getClass} /> */}
          

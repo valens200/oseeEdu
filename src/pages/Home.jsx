@@ -20,9 +20,24 @@ import Main from '../components/main'
 import Header from '../components/Header'
 import NavBar from '../components/NavBar'
 import {Link } from 'react-router-dom'
+import GetStarted from '../components/GetStarted'
+import SmallNav from '../components/SmallNav'
 
 const cards = [[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javascript', '$600'] ,[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javascript', '$600']]
 const Home = () => {
+    const [showForm, setShowForm ] = useState(true)
+    const getForm = () => {
+        if(showForm) {
+            return  <GetStarted setShowForm={setShowForm} />
+        }else{
+            return null
+        }
+    }
+    const getMyForm = (e) =>{
+        e.preventDefault();
+        setShowForm(true)
+        console.log(showForm)
+    }
     const [cards, setCards ]  = useState([
     [ 
         'TECHNOLOGY',
@@ -38,35 +53,62 @@ const Home = () => {
         'OseeEDU is a professional software engineers group with '
     ]
 ])
+const links =  [
+    'HOME',
+    'COURSES',
+    'APPLY NOW',
+    'SCIENCE',
+    'TECHNOLOGY',
+    'ENGINIEERING',
+    'MATHS',
+    'CONTACT US',
+  ];
+  const getNav = () => {
+    setDisplayNav(true)
+  }
+  const [displayNav, setDisplayNav] = useState(false)
 const paragraphys = ['SCIENCE COURSES', 'TECHNOLOGY COURSES', 'ENGINEERING COURSES', 'MATHEMATICS COURSES', 'OseeEDU YOUTUBE CHANNEL'];
 const courses = ['MACHINE LEANING & DATA SCIENCE', 'SOFTWARE ENGINIEERING', 'WEB DEVELOPMENT', 'DATABASE MANAGEMENT', 'NETWORKING SYSTEM MANAGEMENT']; 
 
 return (
 <div>
-    <Header />
-    <NavBar />
+   <div>
+        <Header />
+     </div>
+    <div className="bg-[#808080c4] z-100 text-white sticky hidden md:block top-0  ">
+        <NavBar links={links} />
+    </div>
 <div className="bg-[#2a2a2a] text-white">
 <div className="flex flex-col text-white  h-screen mine space-y-4">
        <div className= "educate overflow-scroll ">
-        <div className="px-[9%] translate-y-[30%] md:translate-y-0  py-[13%] bg-[grey] h-screen ">
-            <h1 className="font-bold spacing-2">WELLCOME TO OSSEEDU</h1>
-             <div className=" leading-5 md:leading-3 text-[0.57rem] mt-3">
+      <div  className="flex flex-row w-[99%] mx-auto">
+      <SmallNav displayNav={displayNav} links={links} />
+        <button onClick={(e) => getNav(e)} className="text-[3rem]">=</button>
+      </div>
+        <div className="px-[9%] translate-y-[7%] md:translate-y-0  py-[13%] hi bg-[grey] h-screen ">
+            <h1 className="font-bold  text-[2.4rem] -[10%]">WELLCOME TO OSSEEDU</h1>
+             <div className=" leading-[10%] md:leading-[4vh] text-[0.99rem]  mt-5">
                 <p>OseeEDU is a professional software engineers group with much experience in Tech</p>
                 <p>Industry, we decided to share various tremendous skills to the world. We are happy to</p>
                 <p>provide STEM courses to all people for better future, We also have Youtube channel where</p>
                 <p>you can get our courses, Here we go!!!!.</p>
              </div>
-            <div>
-               <Link to="/courses" ><button className="bg-[#0dc434] w-[50%]  md:w-[20%]  text-[0.50rem] text-sans font-sans  px-3 py-2 mt-5 rounded-full">LET US KNOW!</button></Link>
+            <div className="md:space-x-5  mt-2">
+               <Link to="/courses" ><button  className="bg-[#0dc434] w-[50%]  md:w-[18%]  text-[0.90rem] text-sans font-sans  px-3 py-2 mt-5 rounded-full">Get courses</button></Link>
+               <Link to="" ><button onClick={(e) => getMyForm(e)}  className="bg-[#0dc434] w-[50%]  md:w-[18%]  text-[0.90rem] text-sans font-sans  px-3 py-2 mt-5 rounded-full">Getstarted / Login</button></Link>
             </div> 
+            <div>
+               {getForm()}
+            </div>
         </div>
-        <div className="container space-x-3 -translate-y-[37%] text-[0.60rem] flex flex-col md:flex-row md:space-x-8 mx-auto">
+        <div className=" space-x-3 justify-center -translate-y-[29%]  md:-translate-y-[37%] text-[0.90rem] flex flex-col md:flex-row md:space-x-8 mx-auto">
             {cards.map((card, index) => (
                 <Link to="/courses" >
-                 <div className="myone px-5 py-7 rounded-lg">
+                 <div className
+                 ="myone px-5  h-[30vh] md:w-[26vw]  w-[90vw] md:mx-0 mx-auto  py-7 rounded-lg">
                     <h2 className="font-bold text-center">{card[0]}</h2>
-                    <div className="text-[0.50rem] ">
-                        <p  >{card[1]}</p>
+                    <div className="text-[0.80rem] translate-y-[50%] text-center ">
+                        <p >{card[1]}</p>
                         <p>{card[1]}</p>
                         <p>{card[1]}</p>
                     </div>  
@@ -74,17 +116,17 @@ return (
                 </Link>
             ))}
         </div>
-        <div className="text-white text-center text-[0.60rem] border-[white]  pb-5 border-b-[1px]">
+        <div className="text-white text-center text-[1.40rem] border-[white]  pb-5 border-b-[1px]">
             <h1 className="font-bold ">CURRENT AVAILABLE COURSES</h1>
         </div>
-        <div className="container flex flex-col md:flex-row space-x-10  mx-auto">
-            <div className="bg-white rounded-xl h-[50%] text-black md:p-4 p-2 text-[0.60rem] w-[80%] text-center md:text-left md:w-[50%] mx-auto md:mx-0  mt-9">
-                <div className="border-[#eee] pb-3 border-b-[1px]">
-                    <h1 className="font-bold">Course Categories</h1>
+        <div className="container w-[80%] md:w-[90%]  flex flex-col md:flex-row space-x-10  mx-auto">
+            <div className="bg-white rounded-xl h-[50%] py-10 text-black md:pl-8  text-[0.60rem] w-[80%] text-center md:text-left md:w-[29%] mx-auto md:mx-0  mt-9">
+                <div className="border-[#eee]  translate-x-8 text-[1.4rem] pb-3 border-b-[1px]">
+                    <h1 className="font-bold ">Course Categories</h1>
                 </div>
-                <div className="leading-5 ">
+                <div className="leading-8 text-[0.90rem] translate-x-8  ">
                     {paragraphys.map((para, index) => (
-                        <p key={index}>{para}</p>
+                        <p className="hover:text-[#0dc434]" key={index}>{para}</p>
                     ))}
                 </div>
                 
@@ -93,10 +135,15 @@ return (
                 <MeetingCards />
             </div>
         </div>
-        <div className="myBody grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:grid-rows-3">   
+        <div className="myBody grid grid-cols-1 grid-rows-1 py-10 md:grid-cols-2 md:grid-rows-3">   
            {courses.map((cose, index) => (
             <Course cose={cose} />  
            ))}
+        </div>
+        <div className="border-[white]  my-10 text-white text-[0.60rem]  pt-[10%] pb-3 border-b-[0.1px]">
+            <div className="w-[85%] mx-auto text-[1.3rem] font-bold">
+              <h1>OUR POPULAR COURSES</h1>
+            </div>
         </div>
     <div className="">
   =    <CourseCards />

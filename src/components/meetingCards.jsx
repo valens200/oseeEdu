@@ -44,12 +44,12 @@ function  MeetingCards () {
         }
     }
   return (
-    <div className="grid grid-cols-1  md:grid-cols-2  gap-3 text-[0.60rem] grid-rows-1  md:grid-rows-2 mt-9 md:flex-row md:space-y-0 md:space-x-7">
+    <div className="grid grid-cols-1  md:grid-cols-2  gap-3 text-[1.3rem] grid-rows-1  md:grid-rows-2 mt-9 md:flex-row md:space-y-0 md:space-x-7">
         {cardInputs.map((input, index) => (
-            <div className="w-[90%]">
+            <div className="w-[90%] rounded-lg">
                 <img className="w-[100%]" src={input[0]} />
-                <div className="bg-white p-3 text-black ">
-                    <h2>{input[1]}</h2>
+                <div className="bg-white p-3 text-[0.90rem] text-black ">
+                    <h2 className="font-bold">{input[1]}</h2>
                     <div>
                         {getElements(input[1])}
                     </div>

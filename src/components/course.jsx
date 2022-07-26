@@ -42,7 +42,7 @@ function Course(props) {
 
     }
   return (
-    <div className="mx-auto  w-[80%] rounded-lg  p-3 mt-4 bg-[#ffffff1e] flex flex-col text-[0.60rem] space-y-2 ">
+    <div className="mx-auto  w-[80%] rounded-lg  p-3 mt-4 bg-[#ffffff1e] flex flex-col text-[0.90rem] space-y-2 ">
         <div>
             <h1>{props.cose}</h1>
         </div>

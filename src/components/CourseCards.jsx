@@ -11,11 +11,11 @@ const images = [javaL, Reactt, js, SQL, first, first1, second, third];
 const cards = [[Reactt, 'React.js', '$500'], [js, 'Javascript', '$600'] ,[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javascript', '$600']]
 export default function CourseCards(props) {
   return (
-    <div className="container  mx-auto flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-6">
+    <div className="container w-[85%]  mx-auto flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-6">
         {cards.map((img, index) => (
           <div className="flex w-[80%] mx-auto rounded-lg flex-col">
             <img className="w-[100%]" src={img[0]}/>
-            <div className=" bg-white text-black  text-[0.50rem] p-2 ">
+            <div className=" bg-white text-black  text-[0.99rem] p-2 ">
                 <div className="text-center font-bold border-b-[0.01vh] p-3 border-[grey]">
                     <h1>{img[1]}</h1>
                 </div>

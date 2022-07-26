@@ -4,7 +4,7 @@ import Contacts from '../components/Contacts'
 
 function Footer() {
   return (
-    <div className=" container mx-auto flex flex-col space-y-8 md:space-x-5 md:space-y-0 md:flex-row">
+    <div className=" container mb-[10%] w-[90%] mx-auto flex flex-col space-y-8 md:space-x-5 md:space-y-0 md:flex-row">
         <Form />
         <Contacts />
         
