@@ -25,10 +25,12 @@ import SmallNav from '../components/SmallNav'
 
 const cards = [[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javascript', '$600'] ,[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javascript', '$600']]
 const Home = () => {
+
+    const [message , setMessage ] = useState('')
     const [showForm, setShowForm ] = useState(true)
     const getForm = () => {
         if(showForm) {
-            return  <GetStarted setShowForm={setShowForm} />
+            return  <GetStarted setMessage={setMessage} message={message} setShowForm={setShowForm} />
         }else{
             return null
         }

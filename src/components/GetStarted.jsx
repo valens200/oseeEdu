@@ -1,12 +1,17 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {useState, useEffect } from 'react'
-
-const inputs = ['Full Names', 'Username', 'Email', 'password', 'Get started'];
+import axios from 'axios'
+const inputs = ['FullNames', 'Username', 'Email', 'password', 'Get started'];
 const subInputs = ['Username or Email','password' , 'Get started'];
 
-function GetStarted({setShowForm}) {
-    const [credentials, setCredentials ] = useState([{ email:'' }, { password:''}, {Username: ''},{FullNames:''}])
+function GetStarted({setShowForm, message, setMessage}) {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
+    const [fullName, setFullName] = useState('');
+
+
     const [isChanged , setIsChanged ] = useState(true)
     const getType = (input) => {
        if(input == 'Email'){
@@ -14,6 +19,29 @@ function GetStarted({setShowForm}) {
        }else{
         return 'text';
        }
+    }
+    const changeState = (e, inpt, data) => {
+        switch(inpt){
+
+            case 'FullNames':
+                 setFullName(data)
+                 console.log(inputs)
+                 break;
+            case 'password':
+                setPassword(data)
+                break
+            case 'Username':
+                setUsername(data)
+                console.log(username)
+                break  
+            case 'Email' :
+                setEmail(data)
+                console.log(email)
+                break 
+            default:
+                console.log('osee')  
+            
+        }
     }
     const getClass = (input) => {
         if(input == 'Get started'){
@@ -42,33 +70,26 @@ function GetStarted({setShowForm}) {
     e.preventDefault()
     setShowForm(false)
  }
- const changeState = (e, input, data) => {
-    e.preventDefault()
-    switch(input){
-        case 'Full Names':
-            setCredentials({FullNames : data});
-            console.log(credentials.FullNames)
-            break;
-            
-        case 'Username':
-            setCredentials({Username:data});
-            break;
-        case 'password':
-            setCredentials({password:data});
-            break;
-        case 'Username or Email':
-            setCredentials({email:data});
-            break;
-        default:
-            setCredentials('');
-            break;
+ 
 
+ const getStarted =  async(e) => {
+    e.preventDefault();
+    try{
+        const response = await axios.post('http://localhost:4000/register', {
+            Email:email,
+            userName:username,
+            Password:password,
+            FullName:fullName
+        })
+       setMessage(response.data) 
+    }catch(err) {
+        setMessage(err.response.data)
     }
 
  }
-
- const getStarted = (e) => {
+ const login = async(e) => {
     e.preventDefault();
+    
  }
 
    return isChanged ? (
@@ -79,6 +100,7 @@ function GetStarted({setShowForm}) {
             <h1 className="text-yellow-400 text-[0.80rem] my-2 -translate-y-[34%]  text-center">oseeEdu</h1>
             <button className="-translate-y-[21%] " onClick={(e) => close(e)}>close</button>
         </div>
+        <div>{message}</div>
       <div>
     <div className="mt-3">
     {inputs.map((input, index) => (
@@ -96,7 +118,7 @@ function GetStarted({setShowForm}) {
 </div>
    ):  (
     <div className=" -translate-y-[80%]  text-black text-[0.90rem] h-[32vh] md:h-[48vh] w-[100%] md:w-[30%] mx-auto md:mx-0 pt-10 px-4  rounded-lg bg-white">
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={(e) => login(e)}>
             <div className="font-bold justify-center translate-y-[3vh] flex space-x-2">
                 <h1  className="text-center">Login </h1>
                 <h1 className="text-yellow-400 invisible  text-[0.80rem] -translate-y-[1%]  text-center">oseeEdu</h1>
