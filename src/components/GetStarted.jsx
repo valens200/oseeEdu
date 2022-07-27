@@ -3,16 +3,15 @@ import {Link} from 'react-router-dom'
 import {useState, useEffect } from 'react'
 import axios from 'axios'
 const inputs = ['FullNames', 'Username', 'Email', 'password', 'Get started'];
-const subInputs = ['Username or Email','password' , 'Get started'];
+const subInputs = ['Email','password' , 'Get started'];
 
 function GetStarted({setShowForm, message, setMessage}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const [fullName, setFullName] = useState('');
-
-
     const [isChanged , setIsChanged ] = useState(true)
+    const [message2, setMessage2] = useState('');
     const getType = (input) => {
        if(input == 'Email'){
         return 'email';
@@ -70,7 +69,13 @@ function GetStarted({setShowForm, message, setMessage}) {
     e.preventDefault()
     setShowForm(false)
  }
- 
+ const getMess = () => {
+    if(message2 == ''){
+        return null
+    }else{
+        return  <p className="text-center bg-red-500 text-white font-bold p-2 ">{message2}</p>
+    }
+ }
 
  const getStarted =  async(e) => {
     e.preventDefault();
@@ -81,6 +86,7 @@ function GetStarted({setShowForm, message, setMessage}) {
             Password:password,
             FullName:fullName
         })
+
        setMessage(response.data) 
     }catch(err) {
         setMessage(err.response.data)
@@ -88,8 +94,17 @@ function GetStarted({setShowForm, message, setMessage}) {
 
  }
  const login = async(e) => {
+  try{
     e.preventDefault();
-    
+    const response = await axios.post('http://localhost:4000/login', {
+        Email:email,
+        Password:password
+    })
+      setShowForm(false)
+    console.log(response.data)
+  }catch(err) {
+    setMessage2(err.response.data)
+  }
  }
 
    return isChanged ? (
@@ -118,6 +133,7 @@ function GetStarted({setShowForm, message, setMessage}) {
 </div>
    ):  (
     <div className=" -translate-y-[80%]  text-black text-[0.90rem] h-[32vh] md:h-[48vh] w-[100%] md:w-[30%] mx-auto md:mx-0 pt-10 px-4  rounded-lg bg-white">
+        {getMess()}
         <form onSubmit={(e) => login(e)}>
             <div className="font-bold justify-center translate-y-[3vh] flex space-x-2">
                 <h1  className="text-center">Login </h1>

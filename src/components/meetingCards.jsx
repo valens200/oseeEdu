@@ -3,6 +3,7 @@ import meeting1 from '../assets/images/meeting1.jpg'
 import meeting2 from '../assets/images/meeting2.jpg'
 import meeting3 from '../assets/images/meeting3.jpg'
 import meeting4 from '../assets/images/meeting4.jpg'
+import Slide from 'react-reveal'
 
 
 const cardInputs = [[meeting1 , 'SCIENCE'],[meeting2 , 'TECHNOLOGY'], [meeting3 , 'ENGINIEERING'], [meeting4 , 'MATHEMATICS']]
@@ -12,34 +13,42 @@ function  MeetingCards () {
         switch(inpt){
             case 'SCIENCE':
             return (
-                <div  className="w-[80%] mt-2 mx-auto">
+               <Slide right>
+                 <div  className="w-[80%] mt-2 mx-auto">
                     <p>Bilogy, Chemistry, Physics and Geography</p>    
                 </div>
+               </Slide>
             )
               break;
             case 'MATHEMATICS':
                 return (
-                    <div  className="w-[80%] mt-2 mx-auto">
+                  <Slide right >
+                      <div  className="w-[80%] mt-2 mx-auto">
                         <p>Algebra, Geometry, Calculus, Diffrentials</p>
                         <p>Construction Engineering</p>
                     </div>
+                  </Slide>
                 )
                 break;
             case 'TECHNOLOGY':
             return (
-                <div className="w-[80%] mt-2 mx-auto">
+              <Slide right>
+                  <div className="w-[80%] mt-2 mx-auto">
                     <p>Web development, Software engineering</p>
                     <p>Machine learning, Data science, Networking</p>    
                     <p>Database manupulation</p>                
                 </div>
+              </Slide>
             )
             break;
             case 'ENGINIEERING':
                 return (
-                    <div  className="w-[80%] mt-2 mx-auto">
+                   <Slide right >
+                     <div  className="w-[80%] mt-2 mx-auto">
                         <p>Electric, Mechanical, Civil and</p>
                         <p>Construction Engineering</p>
                     </div>
+                   </Slide>
                 )
         }
     }

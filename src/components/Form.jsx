@@ -2,6 +2,7 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import MyPortal from './MyPortal'
 import axios from 'axios'
+import { Zoom } from 'react-reveal'
 const inputs = ['YOURNAME...', 'YOUREMAIL...', 'SUBJECT...'];
 const Form = () => {
   const [email, SetEmail] = useState();
@@ -74,7 +75,8 @@ const Form = () => {
 
 
   return (
-    <div className="flex w-[96%] md:w-[68%]  rounded-lg text-[0.90rem] p-5  mx-auto   bg-white flex-col ">
+ <Zoom  >
+     <div className="flex w-[96%] md:w-[68%]  rounded-lg text-[0.90rem] p-5  mx-auto   bg-white flex-col ">
       <div className="text-black font-bold text-[0.86rem] w-[87%] py-5 border-b-[0.9px] border-[#8080801c] mx-auto ">
         <h1>LET'S GET IN TOUCH</h1>
       {getMessage()}
@@ -97,6 +99,7 @@ const Form = () => {
       </div>
      
     </div>
+ </Zoom>
   )
 }
 

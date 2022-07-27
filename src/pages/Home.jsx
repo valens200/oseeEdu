@@ -22,12 +22,13 @@ import NavBar from '../components/NavBar'
 import {Link } from 'react-router-dom'
 import GetStarted from '../components/GetStarted'
 import SmallNav from '../components/SmallNav'
+import  {Zoom , Slide}  from 'react-reveal'
 
 const cards = [[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javascript', '$600'] ,[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javascript', '$600']]
 const Home = () => {
 
     const [message , setMessage ] = useState('')
-    const [showForm, setShowForm ] = useState(true)
+    const [showForm, setShowForm ] = useState(false)
     const getForm = () => {
         if(showForm) {
             return  <GetStarted setMessage={setMessage} message={message} setShowForm={setShowForm} />
@@ -83,11 +84,12 @@ return (
 <div className="bg-[#2a2a2a] text-white">
 <div className="flex flex-col text-white  h-screen mine space-y-4">
        <div className= "educate overflow-scroll ">
-      <div  className="flex flex-row w-[99%] mx-auto">
+      {/* <div  className="flex flex-row w-[99%] mx-auto">
       <SmallNav displayNav={displayNav} links={links} />
         <button onClick={(e) => getNav(e)} className="text-[3rem]">=</button>
-      </div>
-        <div className="px-[9%] translate-y-[7%] md:translate-y-0  py-[13%] hi bg-[grey] h-screen ">
+      </div> */}
+       <Zoom  duration={900}>
+       <div className="px-[9%] translate-y-[7%] md:translate-y-0  py-[13%] hi bg-[grey] h-screen ">
             <h1 className="font-bold  text-[2.4rem] -[10%]">WELLCOME TO OSSEEDU</h1>
              <div className=" leading-[10%] md:leading-[4vh] text-[0.99rem]  mt-5">
                 <p>OseeEDU is a professional software engineers group with much experience in Tech</p>
@@ -103,7 +105,10 @@ return (
                {getForm()}
             </div>
         </div>
-        <div className=" space-x-3 justify-center -translate-y-[29%]  md:-translate-y-[37%] text-[0.90rem] flex flex-col md:flex-row md:space-x-8 mx-auto">
+       </Zoom>
+      <div className="md:-translate-y-[90%] -translate-y-[38%]">
+      <Slide left >
+       <div className=" space-x-3 justify-center  text-[0.90rem] flex flex-col md:flex-row md:space-x-8 mx-auto">
             {cards.map((card, index) => (
                 <Link to="/courses" >
                  <div className
@@ -118,25 +123,31 @@ return (
                 </Link>
             ))}
         </div>
+       </Slide>
+      </div>
         <div className="text-white text-center text-[1.40rem] border-[white]  pb-5 border-b-[1px]">
             <h1 className="font-bold ">CURRENT AVAILABLE COURSES</h1>
         </div>
-        <div className="container w-[80%] md:w-[90%]  flex flex-col md:flex-row space-x-10  mx-auto">
+       <Slide left>
+       <div className="container w-[80%] md:w-[90%]  flex flex-col md:flex-row space-x-10  mx-auto">
             <div className="bg-white rounded-xl h-[50%] py-10 text-black md:pl-8  text-[0.60rem] w-[80%] text-center md:text-left md:w-[29%] mx-auto md:mx-0  mt-9">
                 <div className="border-[#eee]  translate-x-8 text-[1.4rem] pb-3 border-b-[1px]">
                     <h1 className="font-bold ">Course Categories</h1>
                 </div>
-                <div className="leading-8 text-[0.90rem] translate-x-8  ">
+              <Slide right>
+              <div className="leading-8 text-[0.90rem] translate-x-8  ">
                     {paragraphys.map((para, index) => (
                         <p className="hover:text-[#0dc434]" key={index}>{para}</p>
                     ))}
                 </div>
+              </Slide>
                 
             </div>
             <div>
                 <MeetingCards />
             </div>
         </div>
+       </Slide>
         <div className="myBody grid grid-cols-1 grid-rows-1 py-10 md:grid-cols-2 md:grid-rows-3">   
            {courses.map((cose, index) => (
             <Course cose={cose} />  
@@ -147,9 +158,11 @@ return (
               <h1>OUR POPULAR COURSES</h1>
             </div>
         </div>
-    <div className="">
+   <Slide right > 
+   <div className="">
   =    <CourseCards />
     </div>
+   </Slide>
     <div>
         <OseeEdu />
     </div>

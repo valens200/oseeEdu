@@ -1,4 +1,5 @@
 import React from 'react'
+import Slide from 'react-reveal'
 
 function Course(props) {
     const generateText = (element) => {
@@ -26,10 +27,12 @@ function Course(props) {
                 )
             case 'DATABASE MANAGEMENT':
                 return (
-                    <div>
+                  <Slide  right>
+                      <div>
                         <p>Manipulate data using relation DBMS such as SQL, POSTGRESQL, MYSQL ORACLE</p>
                         <p>and non-relational as MONGODB</p>
                     </div>
+                  </Slide>
                 )
             case 'NETWORKING SYSTEM MANAGEMENT':
                 return (
@@ -42,7 +45,8 @@ function Course(props) {
 
     }
   return (
-    <div className="mx-auto  w-[80%] rounded-lg  p-3 mt-4 bg-[#ffffff1e] flex flex-col text-[0.90rem] space-y-2 ">
+  <Slide right>
+      <div className="mx-auto  w-[80%] rounded-lg  p-3 mt-4 bg-[#ffffff1e] flex flex-col text-[0.90rem] space-y-2 ">
         <div>
             <h1>{props.cose}</h1>
         </div>
@@ -52,6 +56,7 @@ function Course(props) {
         </div>
 
     </div>
+  </Slide>
   )
 }
 export default Course
