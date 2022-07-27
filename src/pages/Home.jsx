@@ -23,12 +23,13 @@ import {Link } from 'react-router-dom'
 import GetStarted from '../components/GetStarted'
 import SmallNav from '../components/SmallNav'
 import  {Zoom , Slide}  from 'react-reveal'
+import Hero from '../components/Hero'
 
 const cards = [[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javascript', '$600'] ,[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javascript', '$600']]
 const Home = () => {
 
     const [message , setMessage ] = useState('')
-    const [showForm, setShowForm ] = useState(false)
+    const [showForm, setShowForm ] = useState(true)
     const getForm = () => {
         if(showForm) {
             return  <GetStarted setMessage={setMessage} message={message} setShowForm={setShowForm} />
@@ -74,13 +75,7 @@ const paragraphys = ['SCIENCE COURSES', 'TECHNOLOGY COURSES', 'ENGINEERING COURS
 const courses = ['MACHINE LEANING & DATA SCIENCE', 'SOFTWARE ENGINIEERING', 'WEB DEVELOPMENT', 'DATABASE MANAGEMENT', 'NETWORKING SYSTEM MANAGEMENT']; 
 
 return (
-<div>
-   <div>
-        <Header />
-     </div>
-    <div className="bg-[#808080c4] z-100 text-white sticky hidden md:block top-0  ">
-        <NavBar links={links} />
-    </div>
+<div className="">
 <div className="bg-[#2a2a2a] text-white">
 <div className="flex flex-col text-white  h-screen mine space-y-4">
        <div className= "educate overflow-scroll ">
@@ -88,31 +83,13 @@ return (
       <SmallNav displayNav={displayNav} links={links} />
         <button onClick={(e) => getNav(e)} className="text-[3rem]">=</button>
       </div> */}
-       <Zoom  duration={900}>
-       <div className="px-[9%] translate-y-[7%] md:translate-y-0  py-[13%] hi bg-[grey] h-screen ">
-            <h1 className="font-bold  text-[2.4rem] -[10%]">WELLCOME TO OSSEEDU</h1>
-             <div className=" leading-[10%] md:leading-[4vh] text-[0.99rem]  mt-5">
-                <p>OseeEDU is a professional software engineers group with much experience in Tech</p>
-                <p>Industry, we decided to share various tremendous skills to the world. We are happy to</p>
-                <p>provide STEM courses to all people for better future, We also have Youtube channel where</p>
-                <p>you can get our courses, Here we go!!!!.</p>
-             </div>
-            <div className="md:space-x-5  mt-2">
-               <Link to="/courses" ><button  className="bg-[#0dc434] w-[50%]  md:w-[18%]  text-[0.90rem] text-sans font-sans  px-3 py-2 mt-5 rounded-full">Get courses</button></Link>
-               <Link to="" ><button onClick={(e) => getMyForm(e)}  className="bg-[#0dc434] w-[50%]  md:w-[18%]  text-[0.90rem] text-sans font-sans  px-3 py-2 mt-5 rounded-full">Getstarted / Login</button></Link>
-            </div> 
-            <div>
-               {getForm()}
-            </div>
-        </div>
-       </Zoom>
-      <div className="md:-translate-y-[90%] -translate-y-[38%]">
+     <Hero getMyForm={getMyForm} setShowForm={setShowForm} getForm={getForm} />
+      <div className="md:-translate-y-[30%] mt-20  md:mt-0 -translate-y-[38%]">
       <Slide left >
-       <div className=" space-x-3 justify-center  text-[0.90rem] flex flex-col md:flex-row md:space-x-8 mx-auto">
+       <div className=" hidden md:flex space-x-3 justify-center  text-[0.90rem]  flex-col md:flex-row md:space-x-8 mx-auto">
             {cards.map((card, index) => (
                 <Link to="/courses" >
-                 <div className
-                 ="myone px-5  h-[30vh] md:w-[26vw]  w-[90vw] md:mx-0 mx-auto  py-7 rounded-lg">
+                 <div className="myone px-5  h-[30vh] md:w-[26vw]  w-[95vw] md:mx-0 mx-auto  py-7 rounded-lg">
                     <h2 className="font-bold text-center">{card[0]}</h2>
                     <div className="text-[0.80rem] translate-y-[50%] text-center ">
                         <p >{card[1]}</p>

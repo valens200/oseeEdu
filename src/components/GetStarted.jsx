@@ -10,7 +10,7 @@ function GetStarted({setShowForm, message, setMessage}) {
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const [fullName, setFullName] = useState('');
-    const [isChanged , setIsChanged ] = useState(true)
+    const [isChanged , setIsChanged ] = useState(false)
     const [message2, setMessage2] = useState('');
     const getType = (input) => {
        if(input == 'Email'){
@@ -108,11 +108,11 @@ function GetStarted({setShowForm, message, setMessage}) {
  }
 
    return isChanged ? (
-    <div className="  -translate-y-[80%] text-black text-[0.90rem] w-[100%] md:w-[30%] mx-auto md:mx-0 p-10 rounded-lg bg-white">
+    <div className=" text-black text-[0.90rem] w-[100%] md:w-[70%] mt-[10%] mx-auto md:mx-0 p-10 rounded-lg bg-white">
     <form onSubmit={(e) => getStarted(e)}>
         <div className="font-bold justify-center flex space-x-2">
-            <h1  className="text-center">Get started to </h1>
-            <h1 className="text-yellow-400 text-[0.80rem] my-2 -translate-y-[34%]  text-center">oseeEdu</h1>
+            <h1  className="text-center">Apply now </h1>
+            <h1 className="text-yellow-400 text-[0.80rem] my-2 -translate-y-[34%]  invisible text-center">oseeEdu</h1>
             <button className="-translate-y-[21%] " onClick={(e) => close(e)}>close</button>
         </div>
         <div>{message}</div>
@@ -125,23 +125,23 @@ function GetStarted({setShowForm, message, setMessage}) {
         ))}
     </div>
     <div className="flex justify-between mt-3">
-        <div>Already have an account ???</div>
-        <div className="text-yellow-400"><button  onClick={(e) => main(e)}>Login</button></div>
+        <div>Already have Applied ???</div>
+        <div className="text-yellow-400"><button  onClick={(e) => main(e)}>Enter</button></div>
     </div>
       </div>
     </form>
 </div>
    ):  (
-    <div className=" -translate-y-[80%]  text-black text-[0.90rem] h-[32vh] md:h-[48vh] w-[100%] md:w-[30%] mx-auto md:mx-0 pt-10 px-4  rounded-lg bg-white">
-        {getMess()}
+    <div className=" text-black text-[0.90rem] w-[90%]  md:w-[70%] mt-[10%] mx-auto pt-4   md:mx-0 px-5 pb-[20%] md:p-20 rounded-lg bg-white">
+        {getMess()} 
         <form onSubmit={(e) => login(e)}>
-            <div className="font-bold justify-center translate-y-[3vh] flex space-x-2">
+            <div className="font-bold justify-center  flex space-x-2">
                 <h1  className="text-center">Login </h1>
-                <h1 className="text-yellow-400 invisible  text-[0.80rem] -translate-y-[1%]  text-center">oseeEdu</h1>
-                <button className="-translate-y-[10%]" onClick={(e) => close(e)}>close</button>
+                <h1 className="text-yellow-400 invisible  text-[0.80rem] text-center">oseeEdu</h1>
+                <button className="" onClick={(e) => close(e)}>close</button>
             </div>
           <div>
-        <div className="mt-3 translate-y-[6vh]">
+        <div className="mt-3 translate-y-[3vh]">
         {subInputs.map((input, index) => (
                 <div key={index} className="font-bolder mt-2">
                    {getElement(input)}
@@ -149,8 +149,8 @@ function GetStarted({setShowForm, message, setMessage}) {
             ))}
         </div>
         <div className="flex justify-between mt-3 translate-y-[8vh]">
-            <div>Don't  have an account ???</div>
-            <div className="text-yellow-400"><button type="button" onClick={(e) => main2(e)}>Sign Up</button></div>
+            <div>Don't  have Apllied  yet ???</div>
+            <div className="text-yellow-400"><button type="button" onClick={(e) => main2(e)}>Apply now</button></div>
         </div>
           </div>
         </form>

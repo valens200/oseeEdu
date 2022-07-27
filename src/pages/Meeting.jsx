@@ -9,13 +9,9 @@ const cost = ['14.00', '12'];
 function Meeting() {
   return (
     <div className="main w-[100%]  ">
-         {/* <div className="bg-[#ffff0023]">
-             <NavBar />
-            </div>
-           <div className="bg-white sticky   top-0 z-100 ">
+           <div className=" sticky   top-0 z-100 ">
               <NavBar />
            </div>
-         <Mydiv /> */}
        <div className="container w-[85%]  mx-auto flex-col flex">
             <div className="img w-[100%] rounded-tr-lg rounded-tl-lg ">
          <div className="text-white  z-100 translate-y-[90%] flex flex-row mx-auto container w-[90%]  justify-between">

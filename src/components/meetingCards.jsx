@@ -4,6 +4,7 @@ import meeting2 from '../assets/images/meeting2.jpg'
 import meeting3 from '../assets/images/meeting3.jpg'
 import meeting4 from '../assets/images/meeting4.jpg'
 import Slide from 'react-reveal'
+import {Link} from 'react-router-dom'
 
 
 const cardInputs = [[meeting1 , 'SCIENCE'],[meeting2 , 'TECHNOLOGY'], [meeting3 , 'ENGINIEERING'], [meeting4 , 'MATHEMATICS']]
@@ -55,6 +56,7 @@ function  MeetingCards () {
   return (
     <div className="grid grid-cols-1  md:grid-cols-2  gap-3 text-[1.3rem] grid-rows-1  md:grid-rows-2 mt-9 md:flex-row md:space-y-0 md:space-x-7">
         {cardInputs.map((input, index) => (
+         <Link to="/meetings" >
             <div className="w-[90%] rounded-lg">
                 <img className="w-[100%]" src={input[0]} />
                 <div className="bg-white p-3 text-[0.90rem] text-black ">
@@ -63,7 +65,7 @@ function  MeetingCards () {
                         {getElements(input[1])}
                     </div>
                 </div>
-            </div>
+            </div></Link>
 
         ))}
 

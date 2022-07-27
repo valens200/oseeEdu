@@ -93,7 +93,7 @@ const Form = () => {
           <textArea onChange={(e) => setMessage(e.target.value)} name="message" className="bg-[#7a7a7a45] rounded-lg p-4 w-[100%] h-[100%]"   placeholder="YOUR MESSAGE" />
         </div>
         <div className="w-[90%] mx-auto p-2">
-          <button className="bg-[#0dc434] text-white w-[30%] mt-4 hover:bg-white hover:text-[#0dc434] hover:border px-4 py-3 rounded-full" >SEND MESSAGE NOW</button>
+          <button className="bg-[#0dc434] text-white  md:w-[30%] mt-4 hover:bg-white hover:text-[#0dc434] hover:border px-4 py-3 rounded-full" >SEND MESSAGE NOW</button>
         </div>
         </form>
       </div>

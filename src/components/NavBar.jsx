@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import NavItem from './NavItem';
 
 
-const NavBar = () => {
+const NavBar = (props) => {
 
   const [navItemsData, setNavItems] = useState([
      {name: 'HOME', active: false},
@@ -35,11 +35,11 @@ const NavBar = () => {
   }
 
   const navItems = navItemsData.map((navItem, index)=>{
-    return <NavItem navData={navItem} handleActiveness={handleActiveness} handleInactiveness={handleInactiveness} key={index} />
+    return <NavItem setShowForm={props.setShowForm} navData={navItem} handleActiveness={handleActiveness} handleInactiveness={handleInactiveness} key={index} />
   })
 
   return (
-    <div className='h-24 w-full bg-navBarColor flex justify-center items-center gap-[20rem] '>
+    <div className='h-24 w-full hidden  md:flex  bg-navBarColor  justify-center items-center gap-[20rem] '>
       <a href='/' className='hover:cursor-pointer'>
         <span className='text-white uppercase text-2xl font-black'>osee</span>
         <span className='text-white uppercase text-3xl font-black'>EDU</span>
