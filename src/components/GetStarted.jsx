@@ -10,7 +10,7 @@ function GetStarted({setShowForm, message, setMessage}) {
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const [fullName, setFullName] = useState('');
-    const [isChanged , setIsChanged ] = useState(false)
+    const [isChanged , setIsChanged ] = useState(true)
     const [message2, setMessage2] = useState('');
     const getType = (input) => {
        if(input == 'Email'){
@@ -24,18 +24,24 @@ function GetStarted({setShowForm, message, setMessage}) {
 
             case 'FullNames':
                  setFullName(data)
+                 setMessage('')
                  console.log(inputs)
                  break;
             case 'password':
                 setPassword(data)
+                setMessage('')
+                setMessage2('')
                 break
             case 'Username':
                 setUsername(data)
                 console.log(username)
+                setMessage('')
                 break  
             case 'Email' :
                 setEmail(data)
                 console.log(email)
+                setMessage('')
+                setMessage2('')
                 break 
             default:
                 console.log('osee')  
@@ -62,7 +68,7 @@ function GetStarted({setShowForm, message, setMessage}) {
     setIsChanged(false)
  }
  const main2 = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setIsChanged(true)
  }
  const close = (e) => {
@@ -74,6 +80,13 @@ function GetStarted({setShowForm, message, setMessage}) {
         return null
     }else{
         return  <p className="text-center bg-red-500 text-white font-bold p-2 ">{message2}</p>
+    }
+ }
+ const getMessi = () => {
+    if(message == ''){
+        return null
+    }else{
+        return  <p className="text-center bg-red-500 text-white font-bold p-2 ">{message}</p>
     }
  }
 
@@ -115,8 +128,9 @@ function GetStarted({setShowForm, message, setMessage}) {
             <h1 className="text-yellow-400 text-[0.80rem] my-2 -translate-y-[34%]  invisible text-center">oseeEdu</h1>
             <button className="-translate-y-[21%] " onClick={(e) => close(e)}>close</button>
         </div>
-        <div>{message}</div>
+      
       <div>
+      {getMessi()}  
     <div className="mt-3">
     {inputs.map((input, index) => (
             <div key={index} className="font-bolder mt-2">

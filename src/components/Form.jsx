@@ -86,11 +86,11 @@ const Form = () => {
         <form action="" onSubmit={(e) => handleSubmit(e)}>
         <div className="flex flex-col w-[100%] md:w-[92%] mx-auto md:flex-row justify-around">
         {inputs.map((input , index) => (
-            <input onChange={(e) => getData(e.target.value, input)} className="bg-[#7a7a7a45] my-4    w-[90%] md:w-[30%] mx-auto rounded-full  px-3 py-3 md:py-1" type={getType(input)} name={getName(input)} placeholder={input} />
+            <input key={index} onChange={(e) => getData(e.target.value, input)} className="bg-[#7a7a7a45] my-4    w-[90%] md:w-[30%] mx-auto rounded-full  px-3 py-3 md:py-1" type={getType(input)} name={getName(input)} placeholder={input} />
           ))} 
         </div> 
         <div className="w-[90%]  mt-4 h-[20vh] mx-auto">
-          <textArea onChange={(e) => setMessage(e.target.value)} name="message" className="bg-[#7a7a7a45] rounded-lg p-4 w-[100%] h-[100%]"   placeholder="YOUR MESSAGE" />
+          <textarea onChange={(e) => setMessage(e.target.value)} name="message" className="bg-[#7a7a7a45] rounded-lg p-4 w-[100%] h-[100%]"   placeholder="YOUR MESSAGE" />
         </div>
         <div className="w-[90%] mx-auto p-2">
           <button className="bg-[#0dc434] text-white  md:w-[30%] mt-4 hover:bg-white hover:text-[#0dc434] hover:border px-4 py-3 rounded-full" >SEND MESSAGE NOW</button>

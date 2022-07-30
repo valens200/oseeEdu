@@ -30,9 +30,6 @@ function OseeEdu() {
         </div>
         </div>
        </Zoom>
-         
-
-
     </div>
 
 </div>

@@ -13,7 +13,7 @@ export default function CourseCards(props) {
   return (
     <div className="container w-[85%]  mx-auto flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-6">
         {cards.map((img, index) => (
-          <div className="flex w-[80%] mx-auto rounded-lg flex-col">
+          <div key={index} className="flex w-[80%] mx-auto rounded-lg flex-col">
             <img className="w-[100%]" src={img[0]}/>
             <div className=" bg-white text-black  text-[0.99rem] p-2 ">
                 <div className="text-center font-bold border-b-[0.01vh] p-3 border-[grey]">

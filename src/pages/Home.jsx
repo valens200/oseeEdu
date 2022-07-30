@@ -29,7 +29,7 @@ const cards = [[javaL, 'SQL', '$300'], [Reactt, 'React.js', '$500'], [js, 'Javas
 const Home = () => {
 
     const [message , setMessage ] = useState('')
-    const [showForm, setShowForm ] = useState(true)
+    const [showForm, setShowForm ] = useState(false)
     const getForm = () => {
         if(showForm) {
             return  <GetStarted setMessage={setMessage} message={message} setShowForm={setShowForm} />
@@ -88,7 +88,7 @@ return (
       <Slide left >
        <div className=" hidden md:flex space-x-3 justify-center  text-[0.90rem]  flex-col md:flex-row md:space-x-8 mx-auto">
             {cards.map((card, index) => (
-                <Link to="/courses" >
+                <Link  key={index} to="/courses" >
                  <div className="myone px-5  h-[30vh] md:w-[26vw]  w-[95vw] md:mx-0 mx-auto  py-7 rounded-lg">
                     <h2 className="font-bold text-center">{card[0]}</h2>
                     <div className="text-[0.80rem] translate-y-[50%] text-center ">
@@ -114,7 +114,7 @@ return (
               <Slide right>
               <div className="leading-8 text-[0.90rem] translate-x-8  ">
                     {paragraphys.map((para, index) => (
-                        <p className="hover:text-[#0dc434]" key={index}>{para}</p>
+                        <p key={index}   className="hover:text-[#0dc434]" key={index}>{para}</p>
                     ))}
                 </div>
               </Slide>
@@ -127,7 +127,7 @@ return (
        </Slide>
         <div className="myBody grid grid-cols-1 grid-rows-1 py-10 md:grid-cols-2 md:grid-rows-3">   
            {courses.map((cose, index) => (
-            <Course cose={cose} />  
+            <Course key={index} cose={cose} />  
            ))}
         </div>
         <div className="border-[white]  my-10 text-white text-[0.60rem]  pt-[10%] pb-3 border-b-[0.1px]">

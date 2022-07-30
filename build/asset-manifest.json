@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/oseeEdu/static/css/main.39364ca2.css",
+    "main.js": "/oseeEdu/static/js/main.709bd0ba.js",
+    "static/media/k5.jpg": "/oseeEdu/static/media/k5.6d99615b3f0052e5d43e.jpg",
+    "static/media/back2.jpg": "/oseeEdu/static/media/back2.65d42b94594c74c114c5.jpg",
+    "static/media/b2.jpg": "/oseeEdu/static/media/b2.38fdcfcccab3ee243153.jpg",
+    "static/media/meeting.jpg": "/oseeEdu/static/media/meeting.df31bdd6868172d29e34.jpg",
+    "static/media/t2.avif": "/oseeEdu/static/media/t2.611e4b232cec2bd74728.avif",
+    "static/media/single_meeting.jpg": "/oseeEdu/static/media/single_meeting.475e0ec8d50d793fcecd.jpg",
+    "static/media/third.jpg": "/oseeEdu/static/media/third.495c6f99b287da86145b.jpg",
+    "static/media/ReactT.png": "/oseeEdu/static/media/ReactT.f6b89d232c9bc9f828e5.png",
+    "static/media/facts.jpg": "/oseeEdu/static/media/facts.f2ba04b5ceed38959c36.jpg",
+    "static/media/first1.jpg": "/oseeEdu/static/media/first1.25edc3aec1d59241076d.jpg",
+    "static/media/javaL.jpg": "/oseeEdu/static/media/javaL.9f9aec916269310b3a1a.jpg",
+    "static/media/meeting4.jpg": "/oseeEdu/static/media/meeting4.7ca80fbd8af2b2038a4f.jpg",
+    "static/media/first.jpg": "/oseeEdu/static/media/first.455ce84548080d5dfbc1.jpg",
+    "static/media/second.jpg": "/oseeEdu/static/media/second.bb8a45148d03eeecb76b.jpg",
+    "static/media/meeting3.jpg": "/oseeEdu/static/media/meeting3.709aca9d158b86278f09.jpg",
+    "static/media/meeting2.jpg": "/oseeEdu/static/media/meeting2.f060a56a889c675f88fd.jpg",
+    "static/media/meeting1.jpg": "/oseeEdu/static/media/meeting1.1e84912d474d22c6aac0.jpg",
+    "static/media/js.png": "/oseeEdu/static/media/js.079bc26f09dde0004f29.png",
+    "static/media/Photo.jpeg": "/oseeEdu/static/media/Photo.c5cdd89034ef66606762.jpeg",
+    "static/media/SQL.webp": "/oseeEdu/static/media/SQL.829f6e1b54f17f37ca6c.webp",
+    "index.html": "/oseeEdu/index.html",
+    "main.39364ca2.css.map": "/oseeEdu/static/css/main.39364ca2.css.map",
+    "main.709bd0ba.js.map": "/oseeEdu/static/js/main.709bd0ba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.39364ca2.css",
+    "static/js/main.709bd0ba.js"
+  ]
+}
