@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Header from './components/Header'
 import Main from './components/main'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
+import LogRocket from 'logrocket'
 import Courses from './pages/courses'
 const appAssets = [
   {
