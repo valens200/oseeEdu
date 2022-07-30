@@ -18,7 +18,7 @@
   },
   "engines" : { 
     "npm" : ">=8.1.2",
-    "node" : ">=16.13.0"
+    "node" : ">=16.13.2"
   },
   "scripts": {
     "predeploy": "npm run build",
