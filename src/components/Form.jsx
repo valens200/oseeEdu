@@ -57,11 +57,11 @@ const Form = () => {
       subject:subject,
       text:message
   });
-   setMessage1(response.data)
+   setMessage1(response.data.message)
    console.log(response)
   }catch(err){
-    // setMessage1(err.response)
-    console.log(err)
+    setMessage1(err.response.message)
+    console.log(err.response)
   }
   }
   const getMessage = () => {
