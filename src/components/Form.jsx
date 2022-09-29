@@ -52,7 +52,7 @@ const Form = () => {
   const handleSubmit =  async(e) => {
   e.preventDefault();
   try{
-    const response =  await axios.get('https://osse-edu.herokuapp.com/email', {
+    const response =  await axios.post('https://osse-edu.herokuapp.com/email', {
       email:email,
       subject:subject,
       text:message
@@ -82,7 +82,7 @@ const Form = () => {
       </div>
       {/* <MyPortal  message={message}/> */}
       <div>
-        <form action="" onSubmit={(e) => handleSubmit(e)}>
+        <form  method="POST" action="" onSubmit={(e) => handleSubmit(e)}>
         <div className="flex flex-col w-[100%] md:w-[92%] mx-auto md:flex-row justify-around">
         {inputs.map((input , index) => (
             <input key={index} onChange={(e) => getData(e.target.value, input)} className="bg-[#7a7a7a45] my-4    w-[90%] md:w-[30%] mx-auto rounded-full  px-3 py-3 md:py-1" type={getType(input)} name={getName(input)} placeholder={input} />
