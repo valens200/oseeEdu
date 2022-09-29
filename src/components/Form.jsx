@@ -57,7 +57,7 @@ const Form = () => {
       subject:subject,
       text:message
   });
-   setMessage1(response.data.message)
+   setMessage1(response.data)
    console.log(response.data)
   }catch(err){
     setMessage1(err.response.message)
