@@ -58,7 +58,7 @@ const Form = () => {
       text:message
   });
    setMessage1(response.data.message)
-   console.log(response)
+   console.log(response.data)
   }catch(err){
     setMessage1(err.response.message)
     console.log(err.response.data)
