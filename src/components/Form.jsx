@@ -52,17 +52,16 @@ const Form = () => {
   const handleSubmit =  async(e) => {
   e.preventDefault();
   try{
-    const response =  await axios.post('http://localhost:4000/email', {
-    
+    const response =  await axios.get('https://osse-edu.herokuapp.com/email', {
       email:email,
       subject:subject,
       text:message
   });
    setMessage1(response.data)
-   console.log(response.data)
+   console.log(response)
   }catch(err){
-    setMessage1(err.response.data)
-    console.log(err.response.data)
+    // setMessage1(err.response)
+    console.log(err)
   }
   }
   const getMessage = () => {

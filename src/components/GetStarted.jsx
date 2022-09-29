@@ -93,7 +93,7 @@ function GetStarted({setShowForm, message, setMessage}) {
  const getStarted =  async(e) => {
     e.preventDefault();
     try{
-        const response = await axios.post('http://localhost:4000/register', {
+        const response = await axios.post('https://osse-edu.herokuapp.com/register', {
             Email:email,
             userName:username,
             Password:password,
@@ -109,7 +109,7 @@ function GetStarted({setShowForm, message, setMessage}) {
  const login = async(e) => {
   try{
     e.preventDefault();
-    const response = await axios.post('http://localhost:4000/login', {
+    const response = await axios.post('https://osse-edu.herokuapp.com/login', {
         Email:email,
         Password:password
     })
