@@ -101,8 +101,10 @@ function GetStarted({setShowForm, message, setMessage}) {
         })
 
        setMessage(response.data) 
+       console.log(response);
     }catch(err) {
         setMessage(err.response.data)
+        console.log(err)
     }
 
  }
